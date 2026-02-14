@@ -1,0 +1,77 @@
+openapi: 3.0.4
+info:
+  title: MAC Address Lookup
+  description: >-
+    MAC Address Lookup is a simple tool for looking up MAC address data. It
+    returns the MAC address vendor, conversions, and more.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/macaddresslookup:
+    get:
+      summary: Lookup MAC Address
+      description: Lookup MAC address data based on the MAC address
+      operationId: macaddresslookup
+      parameters:
+        - name: mac
+          in: query
+          schema:
+            type: string
+          required: true
+          description: >-
+            The MAC address for which you want to get the data (e.g.,
+            00-B0-D0-63-C2-26)
+          example: 00-B0-D0-63-C2-26
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  mac: 00:B0:D0:63:C2:26
+                  isValid: true
+                  vendor: Dell Inc.
+                  oui: 00B0D0
+                  formats:
+                    colon: 00:B0:D0:63:C2:26
+                    dash: 00-B0-D0-63-C2-26
+                    dot: 00.B0.D0.63.C2.26
+                    raw: 00B0D063C226
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
