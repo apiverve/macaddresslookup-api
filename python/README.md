@@ -222,8 +222,9 @@ from apiverve_macaddresslookup.apiClient import MacaddresslookupAPIClient
 
 api = MacaddresslookupAPIClient("[YOUR_API_KEY]")
 
+query = { "mac": "00-B0-D0-63-C2-26" }
+
 try:
-    query = { "mac": "00-B0-D0-63-C2-26" }
     result = api.execute(query)
     print(result)
 finally:
