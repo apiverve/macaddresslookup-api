@@ -30,7 +30,11 @@ The MAC Address Lookup API provides a simple, reliable way to integrate mac addr
 ```javascript
 async function callMACAddressLookupAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/macaddresslookup', {
+        const params = new URLSearchParams({
+            mac: '00-B0-D0-63-C2-26'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/macaddresslookup?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +54,7 @@ callMACAddressLookupAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/macaddresslookup?param=value" \
+curl -X GET "https://api.apiverve.com/v1/macaddresslookup?mac=00-B0-D0-63-C2-26" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +154,7 @@ go get github.com/apiverve/macaddresslookup-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +173,7 @@ go get github.com/apiverve/macaddresslookup-api/go
 The MAC Address Lookup API is commonly used for:
 
 - **Web Applications** - Add mac address lookup features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with mac address lookup capabilities
 - **Data Pipelines** - Process and analyze data at scale
