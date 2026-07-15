@@ -13,7 +13,12 @@ const API_URL = 'https://api.apiverve.com/v1/macaddresslookup';
  */
 async function callMACAddressLookupAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            mac: &#x27;00-B0-D0-63-C2-26&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
