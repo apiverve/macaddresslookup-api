@@ -4,22 +4,39 @@ declare module '@apiverve/macaddresslookup' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface macaddresslookupResponse {
     status: string;
     error: string | null;
     data: MACAddressLookupData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface MACAddressLookupData {
-      mac:         string;
-      vendor:      string;
-      dotNotation: string;
-      hexFormat:   string;
-      bitReversed: string;
-      byteString:  string;
-      base16:      string;
+      mac:     null | string;
+      isValid: boolean | null;
+      vendor:  null | string;
+      oui:     null | string;
+      formats: Formats;
+  }
+  
+  interface Formats {
+      colon: null | string;
+      dash:  null | string;
+      dot:   null | string;
+      raw:   null | string;
   }
 
   export default class macaddresslookupWrapper {
