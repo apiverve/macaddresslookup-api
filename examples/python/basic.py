@@ -17,11 +17,14 @@ def call_macaddresslookup_api():
     Make a GET request to the MAC Address Lookup API
     """
     try:
+        # Query parameters
+        params &#x3D; {&#x27;mac&#x27;: &#x27;00-B0-D0-63-C2-26&#x27;}
+
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.get(API_URL, headers=headers, params=params)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
