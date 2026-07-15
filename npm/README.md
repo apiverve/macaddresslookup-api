@@ -122,13 +122,16 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "mac": "00-B0-D0-63-C2-26",
+    "mac": "00:B0:D0:63:C2:26",
+    "isValid": true,
     "vendor": "Dell Inc.",
-    "dotNotation": "00.B0.D0.63.C2.26",
-    "hexFormat": "00:B0:D0:63:C2:26",
-    "bitReversed": "001001101100001001100011110100001011000000000000",
-    "byteString": "0.176.208.99.194.38",
-    "base16": "00B0D063C226"
+    "oui": "00B0D0",
+    "formats": {
+      "colon": "00:B0:D0:63:C2:26",
+      "dash": "00-B0-D0-63-C2-26",
+      "dot": "00.B0.D0.63.C2.26",
+      "raw": "00B0D063C226"
+    }
   }
 }
 ```
