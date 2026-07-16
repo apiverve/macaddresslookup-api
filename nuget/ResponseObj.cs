@@ -25,6 +25,9 @@ namespace APIVerve.API.MACAddressLookup
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -32,22 +35,43 @@ namespace APIVerve.API.MACAddressLookup
         [JsonProperty("mac")]
         public string Mac { get; set; }
 
+        [JsonProperty("isValid")]
+        public bool? IsValid { get; set; }
+
         [JsonProperty("vendor")]
         public string Vendor { get; set; }
 
-        [JsonProperty("dotNotation")]
-        public string DotNotation { get; set; }
+        [JsonProperty("oui")]
+        public string Oui { get; set; }
 
-        [JsonProperty("hexFormat")]
-        public string HexFormat { get; set; }
+        [JsonProperty("formats")]
+        public Formats Formats { get; set; }
+    }
 
-        [JsonProperty("bitReversed")]
-        public string BitReversed { get; set; }
+    public partial class Formats
+    {
+        [JsonProperty("colon")]
+        public string Colon { get; set; }
 
-        [JsonProperty("byteString")]
-        public string ByteString { get; set; }
+        [JsonProperty("dash")]
+        public string Dash { get; set; }
 
-        [JsonProperty("base16")]
-        public string Base16 { get; set; }
+        [JsonProperty("dot")]
+        public string Dot { get; set; }
+
+        [JsonProperty("raw")]
+        public string Raw { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
