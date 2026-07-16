@@ -191,11 +191,37 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the MAC Address Lookup API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "mac": "00:B0:D0:63:C2:26",
+    "isValid": true,
+    "vendor": "Dell Inc.",
+    "oui": "00B0D0",
+    "formats": {
+      "colon": "00:B0:D0:63:C2:26",
+      "dash": "00-B0-D0-63-C2-26",
+      "dot": "00.B0.D0.63.C2.26",
+      "raw": "00B0D063C226"
+    }
+  }
 }
 ```
 
