@@ -1,0 +1,49 @@
+{
+    "name": "apiverve/macaddresslookup",
+    "description": "MAC Address Lookup is a simple tool for looking up MAC address data. It returns the MAC address vendor, conversions, and more.",
+    "version": "1.2.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "APIVerve",
+            "email": "hello@apiverve.com",
+            "homepage": "https://apiverve.com"
+        }
+    ],
+    "keywords": [
+        "api",
+        "apiverve",
+        "macaddresslookup",
+        "mac address lookup",
+        "mac address data",
+        "mac address lookup api",
+        "mac address data api",
+        "mac address lookup tool"
+    ],
+    "homepage": "https://apiverve.com/marketplace/macaddresslookup?utm_source=php&utm_medium=homepage",
+    "support": {
+        "email": "hello@apiverve.com",
+        "docs": "https://docs.apiverve.com/ref/macaddresslookup",
+        "source": "https://github.com/apiverve/macaddresslookup-API/tree/main/php"
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "APIVerve\\Macaddresslookup\\": "php/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "APIVerve\\Macaddresslookup\\Tests\\": "php/tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
