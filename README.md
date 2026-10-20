@@ -1,13 +1,13 @@
-# [MAC Address Lookup API](https://apiverve.com/marketplace/macaddresslookup?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [MAC Address Lookup API](https://apiverve.com/marketplace/macaddresslookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-MAC Address Lookup is a simple tool for looking up MAC address data. It returns the MAC address vendor, conversions, and more.
+MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. On paid plans it becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
 
 The MAC Address Lookup API provides a simple, reliable way to integrate mac address lookup functionality into your applications. Built for developers who need production-ready mac address lookup capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/macaddresslookup?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/macaddresslookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/macaddresslookup?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/macaddresslookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -161,7 +161,7 @@ go get github.com/apiverve/macaddresslookup-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [MAC Address Lookup API](https://apiverve.com/marketplace/macaddresslookup?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [MAC Address Lookup API](https://apiverve.com/marketplace/macaddresslookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/macaddresslookup](https://docs.apiverve.com/ref/macaddresslookup)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -229,7 +229,7 @@ A real response from the MAC Address Lookup API:
 
 ## Support & Community
 
-- 🏠 **API Home**: [MAC Address Lookup API](https://apiverve.com/marketplace/macaddresslookup?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [MAC Address Lookup API](https://apiverve.com/marketplace/macaddresslookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
