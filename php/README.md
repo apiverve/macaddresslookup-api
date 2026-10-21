@@ -1,6 +1,6 @@
 # MAC Address Lookup API - PHP Package
 
-MAC Address Lookup is a simple tool for looking up MAC address data. It returns the MAC address vendor, conversions, and more.
+MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. On paid plans it becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
 
 ## Installation
 
@@ -90,11 +90,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/macaddresslookup?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/macaddresslookup?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://apiverve.com/marketplace/macaddresslookup?utm_source=php&utm_medium=readme](https://apiverve.com/marketplace/macaddresslookup?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/macaddresslookup?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/macaddresslookup?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License

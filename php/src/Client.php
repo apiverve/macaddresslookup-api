@@ -19,7 +19,7 @@ use APIVerve\Macaddresslookup\Exceptions\ValidationException;
  * print_r($response);
  * ```
  *
- * @see https://apiverve.com/marketplace/macaddresslookup?utm_source=php&utm_medium=readme
+ * @see https://apiverve.com/marketplace/macaddresslookup?utm_source=php&utm_medium=referral&utm_content=readme
  */
 class Client
 {
