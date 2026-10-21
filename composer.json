@@ -1,7 +1,7 @@
 {
     "name": "apiverve/macaddresslookup",
-    "description": "MAC Address Lookup is a simple tool for looking up MAC address data. It returns the MAC address vendor, conversions, and more.",
-    "version": "1.2.0",
+    "description": "MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. On paid plans it becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.",
+    "version": "1.2.2",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,13 +15,13 @@
         "api",
         "apiverve",
         "macaddresslookup",
-        "mac address lookup",
-        "mac address data",
         "mac address lookup api",
-        "mac address data api",
-        "mac address lookup tool"
+        "mac address api",
+        "mac vendor lookup api",
+        "mac address vendor api",
+        "mac address lookup api free"
     ],
-    "homepage": "https://apiverve.com/marketplace/macaddresslookup?utm_source=php&utm_medium=homepage",
+    "homepage": "https://apiverve.com/marketplace/macaddresslookup?utm_source=php&utm_medium=referral&utm_content=homepage",
     "support": {
         "email": "hello@apiverve.com",
         "docs": "https://docs.apiverve.com/ref/macaddresslookup",
