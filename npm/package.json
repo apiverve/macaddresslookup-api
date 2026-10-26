@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/macaddresslookup",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. On paid plans it becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.",
   "main": "index.js",
   "types": "index.d.ts",
