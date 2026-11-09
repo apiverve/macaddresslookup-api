@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Macaddresslookup::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ mac: "00-B0-D0-63-C2-26" })
+    #   response = client.execute({ mac: "00-B0-D0-63-C2-26", addressing: true })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/macaddresslookup?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'mac' => { type: 'string', required: true } }
+      VALIDATION_RULES = { 'mac' => { type: 'string', required: true }, 'addressing' => { type: 'boolean', required: false } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {

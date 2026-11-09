@@ -1,6 +1,6 @@
 # MAC Address Lookup API - Ruby Gem
 
-MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. On paid plans it becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
+MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. Add addressing=true to read whether it is unicast, multicast or broadcast, and on paid plans whether it is universal or locally administered (the mark of a randomized private address). On paid plans it also becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
 
 ## Installation
 
@@ -35,7 +35,10 @@ require 'apiverve_macaddresslookup'
 client = APIVerve::Macaddresslookup::Client.new(api_key: "YOUR_API_KEY")
 
 # Make a request
-response = client.execute({ mac: "00-B0-D0-63-C2-26" })
+response = client.execute({
+  mac: "00-B0-D0-63-C2-26",
+  addressing: true
+})
 
 # Print the response
 puts response
@@ -46,7 +49,7 @@ puts response
 
 ```ruby
 begin
-  response = client.execute({ mac: "00-B0-D0-63-C2-26" })
+  response = client.execute({ mac: "00-B0-D0-63-C2-26", addressing: true })
   puts response["data"]
 rescue APIVerve::Macaddresslookup::ValidationError => e
   puts "Validation error: #{e.errors.join(', ')}"
@@ -80,8 +83,15 @@ client = APIVerve::Macaddresslookup::Client.new(
     "formats": {
       "colon": "00:B0:D0:63:C2:26",
       "dash": "00-B0-D0-63-C2-26",
-      "dot": "00.B0.D0.63.C2.26",
+      "dot": "00B0.D063.C226",
       "raw": "00B0D063C226"
+    },
+    "addressing": {
+      "castType": "unicast",
+      "isMulticast": false,
+      "isBroadcast": false,
+      "administration": "universal",
+      "isLocallyAdministered": false
     }
   }
 }

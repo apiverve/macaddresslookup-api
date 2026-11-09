@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "apiverve_macaddresslookup"
-  spec.version       = "1.2.4"
+  spec.version       = "1.2.5"
   spec.authors       = ["APIVerve"]
   spec.email         = ["hello@apiverve.com"]
 
   spec.summary       = "MAC Address Lookup API - Ruby Client"
-  spec.description   = "MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. On paid plans it becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier."
+  spec.description   = "MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. Add addressing=true to read whether it is unicast, multicast or broadcast, and on paid plans whether it is universal or locally administered (the mark of a randomized private address). On paid plans it also becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier."
   spec.homepage      = "https://apiverve.com/marketplace/macaddresslookup?utm_source=ruby&utm_medium=referral&utm_content=homepage"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
