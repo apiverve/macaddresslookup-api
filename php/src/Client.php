@@ -15,7 +15,7 @@ use APIVerve\Macaddresslookup\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['mac' => '00-B0-D0-63-C2-26']);
+ * $response = $client->execute(['mac' => '00-B0-D0-63-C2-26', 'addressing' => true]);
  * print_r($response);
  * ```
  *
@@ -34,7 +34,8 @@ class Client
      * Validation rules for parameters
      */
     private const VALIDATION_RULES = [
-        'mac' => ['type' => 'string', 'required' => true]
+        'mac' => ['type' => 'string', 'required' => true],
+        'addressing' => ['type' => 'boolean', 'required' => false]
     ];
 
     /**

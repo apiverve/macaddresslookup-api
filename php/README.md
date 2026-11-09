@@ -1,6 +1,6 @@
 # MAC Address Lookup API - PHP Package
 
-MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. On paid plans it becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
+MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. Add addressing=true to read whether it is unicast, multicast or broadcast, and on paid plans whether it is universal or locally administered (the mark of a randomized private address). On paid plans it also becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
 
 ## Installation
 
@@ -27,7 +27,10 @@ use APIVerve\Macaddresslookup\Client;
 $client = new Client('YOUR_API_KEY');
 
 // Make a request
-$response = $client->execute(['mac' => '00-B0-D0-63-C2-26']);
+$response = $client->execute([
+    'mac' => '00-B0-D0-63-C2-26',
+    'addressing' => true
+]);
 
 // Print the response
 print_r($response);
@@ -42,7 +45,7 @@ use APIVerve\Macaddresslookup\Exceptions\APIException;
 use APIVerve\Macaddresslookup\Exceptions\ValidationException;
 
 try {
-    $response = $client->execute(['mac' => '00-B0-D0-63-C2-26']);
+    $response = $client->execute(['mac' => '00-B0-D0-63-C2-26', 'addressing' => true]);
     print_r($response['data']);
 } catch (ValidationException $e) {
     echo "Validation error: " . implode(', ', $e->getErrors());
@@ -76,8 +79,15 @@ $client = new Client(
     "formats": {
       "colon": "00:B0:D0:63:C2:26",
       "dash": "00-B0-D0-63-C2-26",
-      "dot": "00.B0.D0.63.C2.26",
+      "dot": "00B0.D063.C226",
       "raw": "00B0D063C226"
+    },
+    "addressing": {
+      "castType": "unicast",
+      "isMulticast": false,
+      "isBroadcast": false,
+      "administration": "universal",
+      "isLocallyAdministered": false
     }
   }
 }
