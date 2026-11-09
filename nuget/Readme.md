@@ -1,7 +1,7 @@
 MAC Address Lookup API
 ============
 
-MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. On paid plans it becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
+MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. Add addressing=true to read whether it is unicast, multicast or broadcast, and on paid plans whether it is universal or locally administered (the mark of a randomized private address). On paid plans it also becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.MACAddressLookup.svg)](https://www.nuget.org/packages/APIVerve.API.MACAddressLookup)
@@ -60,7 +60,8 @@ class Program
         var apiClient = new MACAddressLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MACAddressLookupQueryOptions {
-            Mac = "00-B0-D0-63-C2-26"
+            Mac = "00-B0-D0-63-C2-26",
+            Addressing = true
         };
 
         // Make the API call
@@ -124,7 +125,8 @@ public class Example
         var apiClient = new MACAddressLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MACAddressLookupQueryOptions {
-            Mac = "00-B0-D0-63-C2-26"
+            Mac = "00-B0-D0-63-C2-26",
+            Addressing = true
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -156,7 +158,8 @@ public class Example
         var apiClient = new MACAddressLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MACAddressLookupQueryOptions {
-            Mac = "00-B0-D0-63-C2-26"
+            Mac = "00-B0-D0-63-C2-26",
+            Addressing = true
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -193,7 +196,8 @@ public class Example
         var apiClient = new MACAddressLookupAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new MACAddressLookupQueryOptions {
-            Mac = "00-B0-D0-63-C2-26"
+            Mac = "00-B0-D0-63-C2-26",
+            Addressing = true
         };
 
         try
@@ -249,7 +253,8 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new MACAddressLookupQueryOptions {
-            Mac = "00-B0-D0-63-C2-26"
+            Mac = "00-B0-D0-63-C2-26",
+            Addressing = true
         };
 
         try
@@ -290,7 +295,8 @@ apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new MACAddressLookupQueryOptions {
-    Mac = "00-B0-D0-63-C2-26"
+    Mac = "00-B0-D0-63-C2-26",
+    Addressing = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,7 +322,8 @@ apiClient.SetLogger(message =>
 });
 
 var queryOptions = new MACAddressLookupQueryOptions {
-    Mac = "00-B0-D0-63-C2-26"
+    Mac = "00-B0-D0-63-C2-26",
+    Addressing = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,7 +341,8 @@ apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
 var queryOptions = new MACAddressLookupQueryOptions {
-    Mac = "00-B0-D0-63-C2-26"
+    Mac = "00-B0-D0-63-C2-26",
+    Addressing = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,7 +354,8 @@ The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
 var queryOptions = new MACAddressLookupQueryOptions {
-    Mac = "00-B0-D0-63-C2-26"
+    Mac = "00-B0-D0-63-C2-26",
+    Addressing = true
 };
 
 using (var apiClient = new MACAddressLookupAPIClient("[YOUR_API_KEY]"))
@@ -373,8 +382,15 @@ using (var apiClient = new MACAddressLookupAPIClient("[YOUR_API_KEY]"))
     "formats": {
       "colon": "00:B0:D0:63:C2:26",
       "dash": "00-B0-D0-63-C2-26",
-      "dot": "00.B0.D0.63.C2.26",
+      "dot": "00B0.D063.C226",
       "raw": "00B0D063C226"
+    },
+    "addressing": {
+      "castType": "unicast",
+      "isMulticast": false,
+      "isBroadcast": false,
+      "administration": "universal",
+      "isLocallyAdministered": false
     }
   }
 }

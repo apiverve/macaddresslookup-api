@@ -46,6 +46,27 @@ namespace APIVerve.API.MACAddressLookup
 
         [JsonProperty("formats")]
         public Formats Formats { get; set; }
+
+        [JsonProperty("addressing")]
+        public Addressing Addressing { get; set; }
+    }
+
+    public partial class Addressing
+    {
+        [JsonProperty("castType")]
+        public string CastType { get; set; }
+
+        [JsonProperty("isMulticast")]
+        public bool? IsMulticast { get; set; }
+
+        [JsonProperty("isBroadcast")]
+        public bool? IsBroadcast { get; set; }
+
+        [JsonProperty("administration")]
+        public string Administration { get; set; }
+
+        [JsonProperty("isLocallyAdministered")]
+        public bool? IsLocallyAdministered { get; set; }
     }
 
     public partial class Formats

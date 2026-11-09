@@ -15,5 +15,11 @@ namespace APIVerve.API.MACAddressLookup
         /// </summary>
         [JsonProperty("mac")]
         public string Mac { get; set; }
+
+        /// <summary>
+        /// Include the address type decoded from the first octet: unicast, multicast or broadcast, and universal or locally administered
+        /// </summary>
+        [JsonProperty("addressing")]
+        public bool? Addressing { get; set; }
     }
 }

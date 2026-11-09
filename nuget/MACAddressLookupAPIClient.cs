@@ -67,7 +67,8 @@ namespace APIVerve.API.MACAddressLookup
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "mac", new ValidationRule { Type = "string", Required = true } }
+            { "mac", new ValidationRule { Type = "string", Required = true } },
+            { "addressing", new ValidationRule { Type = "boolean", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>
