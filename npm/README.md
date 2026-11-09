@@ -1,6 +1,6 @@
 # MAC Address Lookup API
 
-MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. On paid plans it becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
+MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. Add addressing=true to read whether it is unicast, multicast or broadcast, and on paid plans whether it is universal or locally administered (the mark of a randomized private address). On paid plans it also becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
 
 [![npm version](https://img.shields.io/npm/v/@apiverve/macaddresslookup.svg)](https://www.npmjs.com/package/@apiverve/macaddresslookup)
 
@@ -57,7 +57,8 @@ Using the API is simple. All you have to do is make a request. The API will retu
 
 ```javascript
 var query = {
-  mac: "00-B0-D0-63-C2-26"
+  mac: "00-B0-D0-63-C2-26",
+  addressing: false
 };
 
 api.execute(query, function (error, data) {
@@ -77,7 +78,8 @@ You can also use promises to make requests. The API returns a promise that you c
 
 ```javascript
 var query = {
-  mac: "00-B0-D0-63-C2-26"
+  mac: "00-B0-D0-63-C2-26",
+  addressing: false
 };
 
 api.execute(query)
@@ -98,7 +100,8 @@ You can also use async/await to make requests. The API returns a promise that yo
 ```javascript
 async function makeRequest() {
     var query = {
-  mac: "00-B0-D0-63-C2-26"
+  mac: "00-B0-D0-63-C2-26",
+  addressing: false
 };
 
     try {
@@ -126,8 +129,15 @@ async function makeRequest() {
     "formats": {
       "colon": "00:B0:D0:63:C2:26",
       "dash": "00-B0-D0-63-C2-26",
-      "dot": "00.B0.D0.63.C2.26",
+      "dot": "00B0.D063.C226",
       "raw": "00B0D063C226"
+    },
+    "addressing": {
+      "castType": "unicast",
+      "isMulticast": false,
+      "isBroadcast": false,
+      "administration": "universal",
+      "isLocallyAdministered": false
     }
   }
 }

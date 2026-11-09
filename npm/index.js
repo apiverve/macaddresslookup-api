@@ -30,7 +30,7 @@ class macaddresslookupWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/macaddresslookup';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"mac":{"type":"string","required":true}};
+        this.validationRules = {"mac":{"type":"string","required":true},"addressing":{"type":"boolean","required":false,"default":false}};
     }
 
     /**

@@ -25,11 +25,20 @@ declare module '@apiverve/macaddresslookup' {
 
 
   interface MACAddressLookupData {
-      mac:     null | string;
-      isValid: boolean | null;
-      vendor:  null | string;
-      oui:     null | string;
-      formats: Formats;
+      mac:        null | string;
+      isValid:    boolean | null;
+      vendor:     null | string;
+      oui:        null | string;
+      formats:    Formats;
+      addressing: Addressing;
+  }
+  
+  interface Addressing {
+      castType:              null | string;
+      isMulticast:           boolean | null;
+      isBroadcast:           boolean | null;
+      administration:        null | string;
+      isLocallyAdministered: boolean | null;
   }
   
   interface Formats {

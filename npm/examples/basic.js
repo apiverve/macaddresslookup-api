@@ -15,7 +15,8 @@ const api = new macaddresslookupAPI({
 
 // Example query
 var query = {
-  mac: "00-B0-D0-63-C2-26"
+  mac: "00-B0-D0-63-C2-26",
+  addressing: false
 };
 
 // Make the API request using callback
