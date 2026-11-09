@@ -1,6 +1,6 @@
 # [MAC Address Lookup API](https://apiverve.com/marketplace/macaddresslookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. On paid plans it becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
+MAC Address Lookup validates any MAC address and converts it across standard colon, dash, dot, and raw hex formats. Add addressing&#x3D;true to read whether it is unicast, multicast or broadcast, and on paid plans whether it is universal or locally administered (the mark of a randomized private address). On paid plans it also becomes a MAC vendor lookup API, adding the device hardware vendor and OUI identifier.
 
 The MAC Address Lookup API provides a simple, reliable way to integrate mac address lookup functionality into your applications. Built for developers who need production-ready mac address lookup capabilities without the complexity of building from scratch.
 
@@ -31,7 +31,8 @@ The MAC Address Lookup API provides a simple, reliable way to integrate mac addr
 async function callMACAddressLookupAPI() {
     try {
         const params = new URLSearchParams({
-            mac: '00-B0-D0-63-C2-26'
+            mac: '00-B0-D0-63-C2-26',
+            addressing: true
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/macaddresslookup?${params}`, {
@@ -54,7 +55,7 @@ callMACAddressLookupAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/macaddresslookup?mac=00-B0-D0-63-C2-26" \
+curl -X GET "https://api.apiverve.com/v1/macaddresslookup?mac=00-B0-D0-63-C2-26&addressing=true" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -218,8 +219,15 @@ A real response from the MAC Address Lookup API:
     "formats": {
       "colon": "00:B0:D0:63:C2:26",
       "dash": "00-B0-D0-63-C2-26",
-      "dot": "00.B0.D0.63.C2.26",
+      "dot": "00B0.D063.C226",
       "raw": "00B0D063C226"
+    },
+    "addressing": {
+      "castType": "unicast",
+      "isMulticast": false,
+      "isBroadcast": false,
+      "administration": "universal",
+      "isLocallyAdministered": false
     }
   }
 }

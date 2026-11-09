@@ -15,7 +15,8 @@ async function callMACAddressLookupAPI() {
   try {
     // Query parameters
     const params &#x3D; new URLSearchParams({
-            mac: &#x27;00-B0-D0-63-C2-26&#x27;
+            mac: &#x27;00-B0-D0-63-C2-26&#x27;,
+            addressing: true
         });
 
     const response = await fetch(`${API_URL}?${params}`, {

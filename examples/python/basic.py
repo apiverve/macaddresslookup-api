@@ -18,7 +18,7 @@ def call_macaddresslookup_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;mac&#x27;: &#x27;00-B0-D0-63-C2-26&#x27;}
+        params &#x3D; {&#x27;mac&#x27;: &#x27;00-B0-D0-63-C2-26&#x27;, &#x27;addressing&#x27;: true}
 
         headers = {
             'x-api-key': API_KEY
